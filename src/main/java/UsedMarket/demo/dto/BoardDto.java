@@ -5,7 +5,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor     //존폐여부결정
+//@NoArgsConstructor     //존폐여부결정
 public class BoardDto {
     private Long id;
     private String title;

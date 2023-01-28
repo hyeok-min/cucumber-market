@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor
+//@NoArgsConstructor
 public class CommentDto {
     private String comment;
     private String writer;
