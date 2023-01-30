@@ -1,6 +1,5 @@
 package UsedMarket.demo.controller;
 
-import UsedMarket.demo.domain.Member;
 import UsedMarket.demo.dto.MemberDto;
 import UsedMarket.demo.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -125,23 +124,4 @@ public class MemberController {
         model.addAttribute("message","회원탈퇴가 완료되었습니다");
         model.addAttribute("searchUrl","/");
         return "message"; }
-
-
-//============================================================
-
-    @GetMapping("/init/login")
-    public String init(Model model){
-        log.info("===========init");
-        Member member = Member.builder()
-                .name("권혁민")
-                .email("gurals04@naver.com")
-                .password(encoder.encode("qwer"))
-                .nickname("gurals04")
-                .build();
-        memberService.init_join(member);
-
-        model.addAttribute("message","init생성");
-        model.addAttribute("searchUrl","/");
-        return "message"; }
-
 }
