@@ -7,7 +7,6 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Data
-//@NoArgsConstructor
 public class MemberDto {
     @NotEmpty(message="회원이름은 필수입니다")
     private String name;
