@@ -149,19 +149,19 @@ public class BoardService {
             boardRepository.save(board);
         }
     }
-//    @Transactional
-//    public void init_board() {
-//        for (int i = 0; i < 21; i++) {
-//            Board board = Board.builder()
-//                    .title("첫 게시물")
-//                    .writer("사용자1")
-//                    .content("안녕하세요")
-//                    .createDate(LocalDateTime.now())
-//                    .count(0L)
-//                    .edit_count(0L)
-//                    .category(Category.valueOf("num" + 1))
-//                    .build();
-//            boardRepository.save(board);
-//        }
-//    }
+    @Transactional
+    public void init_board() {
+        for (int i = 0; i < 21; i++) {
+            Board board = Board.builder()
+                    .title("첫 게시물")
+                    .writer("사용자1")
+                    .content("안녕하세요")
+                    .createDate(LocalDateTime.now())
+                    .count(0L)
+                    .edit_count(0L)
+                    .category(Category.valueOf("num" + 1))
+                    .build();
+            boardRepository.save(board);
+        }
+    }
 }
