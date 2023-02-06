@@ -2,7 +2,6 @@ package UsedMarket.demo.controller;
 
 import UsedMarket.demo.domain.Board;
 import UsedMarket.demo.domain.Category;
-import UsedMarket.demo.domain.Community;
 import UsedMarket.demo.dto.BoardDto;
 import UsedMarket.demo.dto.CommentDto;
 import UsedMarket.demo.dto.CommunityDto;
@@ -23,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.security.Principal;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -189,26 +187,5 @@ public String listBoard(Model model, @PathVariable("num") Category num, @Pageabl
         model.addAttribute("searchUrl","/community");
         return "message";
     }
-//    ===================================================================================================================
-//삭제할것
-    @GetMapping("/board/test")
-    public String board_list(Model model, @PageableDefault(sort = "id", direction = Sort.Direction.DESC) Pageable pageable
-            ,Principal principal){
-
-
-        model.addAttribute("member",memberService.loadMemberByNickname(principal)); //로그인사용자표시
-
-        Page<Board> boardAll = boardService.findBoards(pageable);
-
-        model.addAttribute("boardAll",boardAll);
-        boardService.init_board();
-
-        //==========================페이징=====================================================
-        int startPage = Math.max(1, boardAll.getPageable().getPageNumber() - 1);
-        int endPage = Math.min(boardAll.getTotalPages(), boardAll.getPageable().getPageNumber() + 3);
-
-        model.addAttribute("startPage", startPage);
-        model.addAttribute("endPage", endPage);
-        return "Board/listBoardtest"; }
 }
 

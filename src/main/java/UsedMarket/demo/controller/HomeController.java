@@ -28,7 +28,7 @@ public class HomeController {
         model.addAttribute("member", memberService.loadMemberByNickname(principal)); //로그인사용자 표시
 
         if (memberService.findMemberByEmail(principal).getOauthCode() == 1) {
-            model.addAttribute("message", "처음으로 구글로그인하셨습니다. 개인정보를 변경해주세요.");
+            model.addAttribute("message", "구글로그인하셨습니다. 개인정보를 변경해주세요.");
             model.addAttribute("searchUrl", "/member/edit");
             return "message";}
         return "home"; }}

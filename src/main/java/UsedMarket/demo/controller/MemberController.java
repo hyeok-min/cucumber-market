@@ -67,8 +67,6 @@ public class MemberController {
         }
     }
 
-
-//==================================회원정보 변경=======================================================
     //회원정보 변경을 위한인증
     @GetMapping("/member/edit-auth")
     public String editMemberAuthForm(Model model,Principal principal){
@@ -123,25 +121,6 @@ public class MemberController {
     public String deleteMember(Principal principal,Model model){
         memberService.memberDelete(principal);
         model.addAttribute("message","회원탈퇴가 완료되었습니다");
-        model.addAttribute("searchUrl","/");
-        return "message"; }
-
-
-
-//============================================================
-
-    @GetMapping("/init/login")
-    public String init(Model model){
-        log.info("===========init");
-        Member member = Member.builder()
-                .name("권혁민")
-                .email("gurals04@naver.com")
-                .password(encoder.encode("qwer"))
-                .nickname("gurals04")
-                .build();
-        memberService.init_join(member);
-
-        model.addAttribute("message","init생성");
         model.addAttribute("searchUrl","/");
         return "message"; }
 
