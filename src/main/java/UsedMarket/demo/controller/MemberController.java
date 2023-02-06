@@ -1,6 +1,5 @@
 package UsedMarket.demo.controller;
 
-import UsedMarket.demo.domain.Member;
 import UsedMarket.demo.dto.MemberDto;
 import UsedMarket.demo.service.MemberService;
 import lombok.RequiredArgsConstructor;

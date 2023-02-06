@@ -132,7 +132,7 @@ public String listBoard(Model model, @PathVariable("num") Category num, @Pageabl
     //글 삭제
     @GetMapping("/board/delete/{boardId}")
     public String deleteBoard(@PathVariable("boardId") long boardId,Model model){
-        Category category=boardService.findBoard(boardId).getCategory();    //다른방법이 있나 생각
+        Category category=boardService.findBoard(boardId).getCategory();
 
         boardService.deleteBoard(boardId);
         model.addAttribute("message","삭제가 완료되었습니다");
