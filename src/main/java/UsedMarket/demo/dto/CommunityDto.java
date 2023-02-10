@@ -1,7 +1,6 @@
 package UsedMarket.demo.dto;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
