@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)    //파라미터가 없는 기본 생성자를 생성   /빌더쓸때 같이써야함
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @SequenceGenerator(name = "BOARD_SEQ_GENERATOR")
 public class Board {
@@ -33,7 +33,7 @@ public class Board {
     private String title;   //제목
     private String writer;  //작성자
     private String content; //내용
-    private LocalDateTime createDate;   //게시판,댓글 생성시간   //나중에 extends로 하게 함
+    private LocalDateTime createDate;   //게시판,댓글 생성시간
     private Long count; //조회수
     private Long edit_count;    //수정count
     private String filename;

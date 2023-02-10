@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)	//파라미터가 없는 기본 생성자를 생성   /빌더쓸때 같이써야함
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Member {
     @Id
