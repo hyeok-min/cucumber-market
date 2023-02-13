@@ -36,7 +36,7 @@ public class MemberService {
     public Boolean isEditAuth(Principal principal,String pw){
       return encoder.matches(pw, findMemberByEmail(principal).getPassword()); }
 
-    //코드가 중복되었지만 이름으로 알게하기위해 넣음 ===========================================================존폐여부결정
+    //회원정보가져오기
     public Member loadMemberInfoByNickname(Principal principal){
         return findMemberByEmail(principal); }
 
@@ -73,10 +73,5 @@ public class MemberService {
     public Member findMemberByEmail(Principal principal){
         String email= principal.getName();
         return memberRepository.findByEmail(email); }
-//========================================[나중에 삭제]===================================================================
-    @Transactional  //회원가입누르면 바로 가입되는 코드 =========================================================
-    public void init_join(Member member){
-        memberRepository.save(member); }
-//======================================================================================================================
 }
 

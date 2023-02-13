@@ -30,9 +30,6 @@ public class BoardService {
     public Board findBoard(Long id){
         return boardRepository.findById(id).get(); }
 
-    public Page<Board> findBoards(Pageable pageable) {  //테스트보드쪽임
-        return boardRepository.findAll(pageable); }
-
     public Page<Board> findSearchBoards(Pageable pageable,String searchText,Category category){
         Page<Board> findBoards=boardRepository.search_test(searchText,searchText,category,pageable);
         return findBoards; }
