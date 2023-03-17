@@ -18,18 +18,17 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     private final LoginSecurityService loginSecurityService;
     private final LoginOauth2Service loginOauth2Service;
 
-    @Override               //HttpSecurity를 통해 HTTP 요청에 대한 보안을 설정할 수 있습니다.
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable()
 
-                //        모든 작업 끝나면 경로마다 권한 부여해야 함
                 .authorizeRequests()
                 .antMatchers("/init/login", "/member/new").permitAll()  //로그인없이 접근가능
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()//'formLogin()'에서 폼방식 로그인을 사용할 것임을 알림
-                .loginPage("/")//커스텀 페이지로 로그인 페이지를 변경합니다.
+                .loginPage("/")//커스텀 페이지로 로그인 페이지변경
                 .usernameParameter("userEmail")
                 .passwordParameter("passWord")
                 .loginProcessingUrl("/member/loginPro")//form 태그의 Action URL.
@@ -38,7 +37,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout().logoutUrl("/member/logout").logoutSuccessUrl("/")
-//                .invalidateHttpSession(true);   //세션 초기화
+
 
                 .and()//oauth
                 .oauth2Login()
