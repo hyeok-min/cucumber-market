@@ -39,6 +39,7 @@ public String listBoard(Model model, @PathVariable("num") Category num, @Pageabl
 
     model.addAttribute("category",num.getTr_num());
     model.addAttribute("categoryNum",num.toString());
+    log.info("num.getTr_num={}  num.toString={}",num.getTr_num(),num.toString());
     model.addAttribute("member",memberService.loadMemberByNickname(principal)); //로그인사용자표시
 
      Page<Board> boardAll=null;
