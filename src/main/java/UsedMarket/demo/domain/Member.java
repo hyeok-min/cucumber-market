@@ -25,7 +25,7 @@ public class Member {
     private String provider;
     private String providerId;
     private Long oauthCode;
-    @Builder
+    @Builder    //
     protected Member(String name, String password, String nickname, String email,String provider,String providerId,Long oauthCode) {
         this.name = name;
         this.password = password;
